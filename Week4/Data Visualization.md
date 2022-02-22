@@ -2,7 +2,7 @@
 ## Data visualization in p5js 
 
 ### Code
-https://editor.p5js.org/soumen02/sketches/bVxMgSUED
+https://editor.p5js.org/soumen02/full/bVxMgSUED
 
 ### Objective 
 
