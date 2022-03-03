@@ -12,6 +12,11 @@ The game uses the Universal Law of Gravitation and other related Laws of Motion 
 
 ![Universal Law of Gravitation](https://user-images.githubusercontent.com/38569809/156557073-a1aa6ff5-657a-4a23-82d6-35d25b1460bb.png)
 
+THe game expects to have mechanics similar to the simulation shown below.
+
+![PhET Gravity and Orbits](https://user-images.githubusercontent.com/38569809/156557743-602185bc-6116-42e8-bd1e-5b29c7bd9225.png)
+
+
 
 The game expects to have multiple bodies which are given a mass, radius and an initial velocity by the user. Each body simulates motion by imposing gravity on every other body. Adding a trail to these bodies results in beautiful patters. 
 
@@ -24,7 +29,7 @@ A body is created at the point of mousePress(). Then, the body can be given a ve
 ### Initial Attempt 
 
 I first started by trying to figure out the Physics. The Physics of attraction and gravity requires the use of vectors. 
-I found the following videos by The Coding Train to be immensly useful for understand how displacement, vectors and acceetarion works :
+I found the following nature of Code videos by The Coding Train to be immensly useful for understand how displacement, vectors and acceetarion works :
   - [The Acceleration Vector](https://www.youtube.com/watch?v=T84AWnntxZA&t=76s)
   - [Gravitataion Attraction](https://www.youtube.com/watch?v=EpgB3cNhKPM&t=522s)
 
