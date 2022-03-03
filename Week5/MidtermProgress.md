@@ -1,5 +1,10 @@
 # Orbital Sandbox Simulator - Mid-Term Project
 
+## Trial Codes:
+
+[Required features in 2 bodies](https://editor.p5js.org/soumen02/sketches/Kz3qDskBg)
+[Attempt to combine them into each object](https://editor.p5js.org/soumen02/sketches/nbZCqGCj9)
+
 ## Inspiration 
 
 Back in 2007, the first games I ever played were on [Cool Math Games](https://www.coolmathgames.com/). The website used to come up with new games every week or so, adding on to a never ending collection of flash player games (which has now been discontinued). My favourite ones were the ones where some level of physics was involved, and it was in fact the source of my interest in the subject of physics as it gave me an unlimited playground to test out my imagination. 
