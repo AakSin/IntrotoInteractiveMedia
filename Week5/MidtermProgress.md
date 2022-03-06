@@ -2,15 +2,17 @@
 
 ## Trial Codes:
 
-[Required features in 2 bodies](https://editor.p5js.org/soumen02/sketches/Kz3qDskBg)
-
-[Attempt to combine them into each object](https://editor.p5js.org/soumen02/sketches/nbZCqGCj9)
+[Game Version 1](https://editor.p5js.org/soumen02/sketches/nbZCqGCj9)
 
 ## Inspiration 
 
 Back in 2007, the first games I ever played were on [Cool Math Games](https://www.coolmathgames.com/). The website used to come up with new games every week or so, adding on to a never ending collection of flash player games (which has now been discontinued). My favourite ones were the ones where some level of physics was involved, and it was in fact the source of my interest in the subject of physics as it gave me an unlimited playground to test out my imagination. 
 
 For that reason, I chose to make a physics simulation based game - an orbit simulator! The game does not have an objective - other than that of testing out your imagination and have fun! 
+
+## How to Play
+
+A body is created at the mouse coordinates by a __Mouse Click__. It can be given a velocity by __Dragging and Releasing__ in the opposite direction, much like a slingshot. 
 
 ## Concept
 
@@ -26,9 +28,6 @@ THe game expects to have mechanics similar to the simulation shown below.
 
 The game expects to have multiple bodies which are given a mass, radius and an initial velocity by the user. Each body simulates motion by imposing gravity on every other body. Adding a trail to these bodies results in beautiful patters. 
 
-## How to Play
-
-A body is created at the point of mousePress(). Then, the body can be given a velocity by dragging in the opposite direction, much like a slingshot. 
 
 
 ## Development
@@ -40,9 +39,9 @@ I found the following nature of Code videos by The Coding Train to be immensly u
   - [Gravitataion Attraction](https://www.youtube.com/watch?v=EpgB3cNhKPM&t=522s)
 
 
-### Current progress
+### Code Process
 
-I'm currently trying to implement force between two bodies in the form of a vector. 
+In the game, the canvas represents the vastness of space. The user will be populating this space with bodies which have properties like mass, initial velocity, acceleration and force. The class *Body* represents the template for making these bodies, and they are stored in the array *bodies_array*.
 
 ## Challenges
 
