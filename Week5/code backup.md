@@ -8,29 +8,23 @@ let planets = [];
 let rock, bg;
 
 function preload() {
-  // let img1 = loadImage("assets/1.png");
-  //   planets.push(img1);
-  
+  let img1 = loadImage("assets/1.png");
+  planets.push(img1);
+
   let img2 = loadImage("assets/2.png");
-      planets.push(img2);
+  planets.push(img2);
 
   let img3 = loadImage("assets/3.png");
-      planets.push(img3);
+  planets.push(img3);
 
   let img4 = loadImage("assets/4.png");
-      planets.push(img4);
-  
+  planets.push(img4);
 
-//   let img5 = loadImage("assets/5.png");
-//       planets.push(img5);
+  let img5 = loadImage("assets/5.png");
+  planets.push(img5);
 
-//   let img6 = loadImage("assets/6.png");
-//       planets.push(img6);
+  rock = loadImage("assets/rock.png");
 
-  // let img7 = loadImage("assets/7.png");
-  rock = loadImage("assets/rock.png");  
-  
-  // bg = loadImage ("assets/starsbg.jpg");
 }
 
 class Body {
@@ -96,7 +90,6 @@ class Body {
   }
 }
 
-
 let x, y;
 let c;
 let down;
@@ -109,13 +102,18 @@ function setup() {
     element.addEventListener("contextmenu", (e) => e.preventDefault());
     imageMode(CENTER);
   }
-  
+
   // Create background with stars
-  
+
   for (let i = 0; i < 1000; i++) {
-    stars[i] = new Star(random(width), random(height), random(255), random(0.1, 3), random(1));
+    stars[i] = new Star(
+      random(width),
+      random(height),
+      random(255),
+      random(0.1, 3),
+      random(1)
+    );
   }
-  
 }
 
 class Star {
@@ -128,16 +126,15 @@ class Star {
   }
 
   showStar() {
-    stroke(this.c)
+    stroke(this.c);
     point(this.x, this.y);
   }
 }
 
-
 function draw() {
   // tint(0, 153, 204, 126);
   // image(bg, width/2, height/2, width, height);
-  
+
   background(0, 50);
   for (let i = 0; i < stars.length; i++) {
     // stars[i].twinkle();
@@ -175,16 +172,27 @@ function mouseWheel() {
 
   // rad = rad - (event.deltaY/125);
   if (-event.deltaY / 125 > 0) {
-    rad = rad + 17.5;
+    if (rad == 5) {
+      rad = 20;
+    } else if (rad == 20) {
+      rad = 50;
+    }
   } else if (-event.deltaY / 125 < 0) {
-    rad = rad - 17.5;
+     if (rad == 50)
+       {
+         rad = 20;
+       }
+      else if ( rad == 20)
+        {
+          rad = 5;
+        }
   }
 
   if (rad <= 5) {
     rad = 5;
   }
-  if (rad >= 40) {
-    rad = 40;
+  if (rad >= 50) {
+    rad = 50;
   }
 }
 
@@ -212,6 +220,8 @@ function mouseClicked() {
   // }
 }
 
+let max;
+
 function keyPressed() {
   background(0);
   if (keyCode === UP_ARROW) {
@@ -231,7 +241,26 @@ function keyPressed() {
       body.pos.x += +50;
     }
   }
+  
+  if (keyCode === 32)
+    {
+      center = createVector(width/2, height/2);
+      diff = createVector();
+      max = bodies_array[0];
+      for (let body of bodies_array){
+        if ((max < body.mass)){
+          max = body
+          }
+        }
+      diff = center.sub(max.pos)    
+          for (let body of bodies_array){
+            body = body.pos.add(diff);
+            print("worked")
+        
+      }
+    }          
 }
+
 
 function drawArrow(base, vec) {
   // print("wprked")
