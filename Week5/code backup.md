@@ -1,13 +1,37 @@
-//Putting there here because I had a close call and almost deleted the sketch.js while removing some asset files ://///
-
 let flag = 0,
   Arrowflag = 0;
 let bodies_array = [];
 let rad = 5;
 let lim = 40;
 
-let planets = ["1.png", "2.png", "3.png", "4.png", "5.png", "6.png"];
-let rock = "rock.png";
+let planets = [];
+let rock, bg;
+
+function preload() {
+  // let img1 = loadImage("assets/1.png");
+  //   planets.push(img1);
+  
+  let img2 = loadImage("assets/2.png");
+      planets.push(img2);
+
+  let img3 = loadImage("assets/3.png");
+      planets.push(img3);
+
+  let img4 = loadImage("assets/4.png");
+      planets.push(img4);
+  
+
+//   let img5 = loadImage("assets/5.png");
+//       planets.push(img5);
+
+//   let img6 = loadImage("assets/6.png");
+//       planets.push(img6);
+
+  // let img7 = loadImage("assets/7.png");
+  rock = loadImage("assets/rock.png");  
+  
+  // bg = loadImage ("assets/starsbg.jpg");
+}
 
 class Body {
   constructor(x, y, rad, vel, type) {
@@ -21,13 +45,13 @@ class Body {
     // Radius of sphere
     this.r = rad;
     this.type = type;
-    
-    if (rad>5){
-      this.image = "rock.png"
+
+    if (rad <= 5) {
+      this.image = rock;
+    } else {
+      // print(planets[Math.floor(Math.random()*planets.length)]);
+      this.image = planets[Math.floor(Math.random() * planets.length)];
     }
-      else {
-        this . image = 
-      }
     // print(this.r)
   }
 
@@ -57,8 +81,7 @@ class Body {
   }
 
   update() {
-    
-    if (this.type != "star"){
+    if (this.type != "star") {
       this.vel.add(this.acc);
       this.pos.add(this.vel);
       this.acc.set(0, 0);
@@ -69,19 +92,57 @@ class Body {
     noStroke();
     fill(79, 113, 255);
     ellipse(this.pos.x, this.pos.y, this.r);
+    image(this.image, this.pos.x, this.pos.y, this.r, this.r);
   }
 }
+
+
+let x, y;
+let c;
+let down;
+let stars = [];
 
 function setup() {
   createCanvas(900, 600);
   translate(width / 2, height / 2);
   for (let element of document.getElementsByClassName("p5Canvas")) {
     element.addEventListener("contextmenu", (e) => e.preventDefault());
+    imageMode(CENTER);
+  }
+  
+  // Create background with stars
+  
+  for (let i = 0; i < 1000; i++) {
+    stars[i] = new Star(random(width), random(height), random(255), random(0.1, 3), random(1));
+  }
+  
+}
+
+class Star {
+  constructor(tx, ty, tc, tf, td) {
+    this.x = tx;
+    this.y = ty;
+    this.c = tc;
+    this.f = tf;
+    this.down = td;
+  }
+
+  showStar() {
+    stroke(this.c)
+    point(this.x, this.y);
   }
 }
 
+
 function draw() {
+  // tint(0, 153, 204, 126);
+  // image(bg, width/2, height/2, width, height);
+  
   background(0, 50);
+  for (let i = 0; i < stars.length; i++) {
+    // stars[i].twinkle();
+    stars[i].showStar();
+  }
 
   fill(200, 70);
   ellipse(mouseX, mouseY, rad);
@@ -111,17 +172,14 @@ function draw() {
 
 function mouseWheel() {
   // print(event.deltaY/125);
-  
+
   // rad = rad - (event.deltaY/125);
-  if (-event.deltaY/125 > 0)
-    {
-      rad = rad + 17.5;
-    }
-  else if (-event.deltaY/125 < 0)
-    {
-      rad = rad - 17.5;
-    }
-  
+  if (-event.deltaY / 125 > 0) {
+    rad = rad + 17.5;
+  } else if (-event.deltaY / 125 < 0) {
+    rad = rad - 17.5;
+  }
+
   if (rad <= 5) {
     rad = 5;
   }
@@ -155,7 +213,6 @@ function mouseClicked() {
 }
 
 function keyPressed() {
-  
   background(0);
   if (keyCode === UP_ARROW) {
     for (let body of bodies_array) {
@@ -165,19 +222,16 @@ function keyPressed() {
     for (let body of bodies_array) {
       body.pos.y += -50;
     }
-  } 
-    else if (keyCode === RIGHT_ARROW) {
+  } else if (keyCode === RIGHT_ARROW) {
     for (let body of bodies_array) {
       body.pos.x += -50;
     }
-  }
-      else if (keyCode === LEFT_ARROW) {
+  } else if (keyCode === LEFT_ARROW) {
     for (let body of bodies_array) {
       body.pos.x += +50;
     }
   }
 }
-
 
 function drawArrow(base, vec) {
   // print("wprked")
