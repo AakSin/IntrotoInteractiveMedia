@@ -48,3 +48,6 @@ In the game, the canvas represents the vastness of space. The user will be popul
 Understanding the vector calculation that goes into the making of the framwork was a demanding task (which Daniel Shiffman's video made easier). 
 
 Secondly, I'm facing a challenge figuring out the mechanics of applying this force across N bodies. For a simulation of gravity, I will need to find the net force on each body, requiring a high time complexity if I don't optimize the code (using memoization?).
+
+### References 
+Muisc : https://www.free-stock-music.com/alexander-nakarada-space-ambience.html
