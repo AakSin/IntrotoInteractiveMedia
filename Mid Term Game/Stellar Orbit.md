@@ -10,7 +10,7 @@
   - scroll up : increase size
   - scroll down : decrease size
 - Camera Controls
-  - space bar : toggle camera follow
+  - **space bar : toggle camera follow (Make sure you use this!)
   - arrow keys : move camera manually
 - Game Controls
   - R : restart game  
@@ -123,12 +123,17 @@ I find the sound tracks of interstellar to perfectly describe what I feel when I
 
 ## Challenges
 
-Understanding the vector calculation that goes into the making of the framwork was a demanding task (which Daniel Shiffman's video made easier). 
-
-Secondly, I'm facing a challenge figuring out the mechanics of applying this force across N bodies. For a simulation of gravity, I will need to find the net force on each body, requiring a high time complexity if I don't optimize the code (using memoization?).
-
+1. Firstly, the challenge at the start was to deploy N body attraction using code. Daniel Shiffman's videos were immensly helpful in overcoming this by using Vecotrs. 
+2. Camera follow was another challenge I had to overcome to make the game more play-able. It was a challenge as figuring the right velocities to add and subtract took some time to figure out, especially as they were vecotrs with directions. 
+3. Adding the music was a difficult task as my browser seemed to keep running out of memory due to a memory leak. I fixed it by using a p5.sound function and adding the same to the html files. 
 
 ## Future Improvements
+
+The game can be further improved in a lot of ways. I'm listing a few ways below.
+1. Smoother camera movement using arrow keys - one that is relative to the maximum velocity of the bodies
+2. Long disappearing trails - the bodies would form beautiful patterns if they were given a more lasting trail which didnt use transparency of the background
+3. Zoom in and out - would be a great feature if implemented, although it will be a challenge doing it.
+
 
 ### Sketch Files
 - Assets Folder : 
