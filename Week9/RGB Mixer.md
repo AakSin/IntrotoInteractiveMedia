@@ -1,6 +1,9 @@
 # RGB Colour Mixer - Part 2 Assignment 2
 ## using Arduino 
 
+![Arduino Circuit - Tinkercad](https://user-images.githubusercontent.com/38569809/162177369-d7a11a30-ba59-4782-bbf5-ab154219a9d9.png)
+
+
 ### Objective 
 
 To work with digitalRead, digitalWrite, analogRead, analogWrite and input and output in hardware. 
