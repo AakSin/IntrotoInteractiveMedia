@@ -1,6 +1,14 @@
+# Music Instrument - Part 2 Assignment 3
+## using Arduino
 
+### Objective 
+To create a musical instrument using sensors and arduino!
+
+### Project Video
 [Link to video](https://drive.google.com/file/d/18_NgovwbAKv7W_LThACd1o48hPwp8XBT/view?usp=sharing)
 
+
+### Development Process
 For this musical instrument assignment, we wanted to explore different and unique types of sensors we haven't seen in class yet. We looked around in the IM Lab and thought of all the different ways we could use the sensors available to us. Some of our options were:
 - infrared sensor
 - photoresistor 
@@ -8,7 +16,7 @@ For this musical instrument assignment, we wanted to explore different and uniqu
 - force resistor
 - accelerometer
 
-We ended up using an accelerometer as our primary sensor. 
+We ended up using an accelerometer as our primary sensor, because of the freedom of motion it would allow us!
 
 Next, we had to figure out how we were going to wire up the accelerometer and what code could we potentially use. After thorough research trying to find the type of accelerometer we had and trying to find the wiring/code for it, we decided to use the orientation function of the accelerometer for our instrument. 
 
@@ -18,7 +26,7 @@ Some of the websites that were really helpful during this process:
 
 [For the code/wiring](https://forum.arduino.cc/t/mma8452-accelerometer-not-working-arduino-uno-cheese-cake-for-the-best-answer/493668)
 
-*insert mathematical explanation for how we used the accelerometer*
+The accelerometer works by measuring the static or dynamic forces acting on the body using a sensor. The values that show up while our instrument was still were measurements of the static force of gravity. When we picked up the instrument, the values showed significant changes due to the dynamic force caused by motion. These forces along the X, Y and Z axes can be analyzed and the orientation of the device can be calculated. We used this orientation value for our instrument. 
 
 ![pic of accelerometer wiring](https://github.com/j-da-savage/Introduction-to-Interactive-Media/blob/main/Musical%20Instrument/testing%20wiring%20for%20accelerometer.jpg)
 ![pic of accelerometer code](https://github.com/j-da-savage/Introduction-to-Interactive-Media/blob/main/Musical%20Instrument/accelerometer%20code%20working.jpg)
@@ -74,11 +82,11 @@ https://create.arduino.cc/projecthub/glennedi/dc-piezo-buzzer-volume-control-4a2
 ![speaker trying](https://github.com/j-da-savage/Introduction-to-Interactive-Media/blob/main/Musical%20Instrument/testing%20out%20volume%20code%20with%20a%20speaker.jpg)
 
 
-After many attempts, we ended up using a potentiometer (no code needed) to control the volume of the piezo buzzer.
+After some attempts, we ended up using a potentiometer (no code needed) to control the volume of the piezo buzzer.
 
 Finally, we added a switch (no code, circuit in series), and put all the bits of code together in one and tested it all out.
 
-Future improvements:
-- Adding more force sensors and creating an array of different notes
-- Using an LCD screen to display which notes are playing
--Creating a hand glove or a type of asing to facilitate playing the instrument
+### Future Improvements
+  - Our instrument leaves scope for a lot of improvements due to the fact that we used an accelerometer. THis gives us access to 3 dimensions which will allow us to change pitch, scale, octaves and even different instruments!
+  - Adding more force sensors and developing on that could lead to a 3 dimensional portable piano. This could be fit on a glove to make it a well finished product.
+  - We could also add an LCD screen to the breadboard to let the user know what note they are playing. THis could especially be helpful after making the above improvements since it will allow for more possibilities. 
