@@ -47,12 +47,13 @@ Genesis by Grimes was crucial for the concept of this project to come to fruitio
 
 The project works using an accelerometers and two buttons for input.
 
-The reason we used accelerators was due to the fact that it allowed us to take 3 dimentional input. Since the visual side of the project was to be in a 3 dimentional space, we thought it best to use a sensor that could provide input for the same. Also, the use of such a sensor left a lot of space to experiment with the variables it could control. 
-
+The reason we used accelerators was due to the fact that it allowed us to take 3 dimentional input. Since the visual side of the project was to be in a 3 dimentional space, we thought it best to use a sensor that could provide input for the same. Also, the use of such a sensor left a lot of space to experiment with the variables it could control. ![Input sensors](https://user-images.githubusercontent.com/38569809/168381616-38467fa8-68d1-4cf0-975a-e229c2426190.png)
 
 Next, since we would be using a 3D sensor, it made perfect sense to make it wireless - to allow the user complete freedom to move around without being tethered to a wire or getting tangled. 
 
 We used XBEE modules for wireless communication. The devices gave us quite some trouble but after some toying around we were able to get it going. The buttons were soldered and done in the end. It was all put in an encasing that resembles a periscope. 
+![XBEE Modules](https://user-images.githubusercontent.com/38569809/168381717-5fd37588-362a-4007-a709-6ce813ca3ebb.png)
+
 
 ```c++
  accel.read();
@@ -263,9 +264,9 @@ socket.on("spread", (spread) => {
 });
 ```
  
- # Challenges 
+ ## Challenges 
 
-## XBEE
+### XBEE
 
 The XBEE was the biggest challnge we faced. It was glitchly, buggy and straight up unresponsive at times. Getting it to work at first was big enough of a challenge. When the module was setup and transmitting data we realized the XBEE couldn't write string values. Hence we had to convert our string packet into a Character array before we sent it over XBee.
 
@@ -289,11 +290,11 @@ The XBEE was the biggest challnge we faced. It was glitchly, buggy and straight 
       XBee.write(10);
       delay(10);
 ```
-## AFrame
+### AFrame
 
 Aframe was a completely new library to me. Getting the animations set up was very challenging as I was still not used to working in a 3D space where lighting and the z-axis was invoved.
 
-## Event Handlers
+### Event Handlers
 
 The hardware sends too much data in realtime for the software to respond in time hence it was a huge challenge for me to figure out how to make it react to changes. Here is where I came with the idea of thresholds and triggering events only when certain numeric values were crossed.
 
@@ -324,6 +325,6 @@ socket.on("xOrient",(xOrient)=>{
  })
 ```
 
-## Casing
+### Casing
 
 The casing was something that was hard for us to do since both of us were unfamiliar with crafts. I decided to go with cardboard and spent quite some time making even a simple casing. Make it look good was even a bigger challenge. Duct tape helped us make it in the first place, ribbons helped us make it look better.
